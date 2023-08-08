@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "tokyonight",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -60,6 +60,7 @@ return {
     performance = {
       rtp = {
         -- customize default disabled vim plugins
+        enabled_plugins = { "blamer" },
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
@@ -70,6 +71,7 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
+    vim.opt.swapfile = false
     -- vim.filetype.add {
     --   extension = {
     --     foo = "fooscript",
