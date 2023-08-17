@@ -16,7 +16,7 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-
+-- use ({'Exafunction/codeium.vim'}), 
   -- Set colorscheme to use
   colorscheme = "tokyonight",
 
@@ -31,9 +31,10 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
+        tabstop = 4, 
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
+          -- ".ts",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -60,7 +61,7 @@ return {
     performance = {
       rtp = {
         -- customize default disabled vim plugins
-        enabled_plugins = { "blamer" },
+        enabled_plugins = { "blamer", "codeium" },
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
@@ -72,6 +73,11 @@ return {
   polish = function()
     -- Set up custom filetypes
     vim.opt.swapfile = false
+    -- maps = require("../astronvim.utils").empty_map_table()
+    -- maps.n["<leader>n"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" }
+    -- maps.t["<leader>n"] = maps.n["<leader>n"]
+ 
+    -- vim.opt.mouse = ""
     -- vim.filetype.add {
     --   extension = {
     --     foo = "fooscript",
